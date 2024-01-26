@@ -20,6 +20,7 @@ dependencies:
   - scipy=1.11.1
   - setuptools=68.0
   - simpeg=0.20.0
+  - sympy=1.12
   - pip:
     - nbconvert[webpdf]
     - git+https://github.com/geoscixyz/geosci-labs
