@@ -25,11 +25,11 @@ warnings.filterwarnings("ignore")
 Solver = get_default_solver()
 
 # Mesh, sigmaMap can be globals global
-npad = 15
+npad = 6
 growrate = 2.0
 cs = 0.5
-hx = [(cs, npad, -growrate), (cs, 200), (cs, npad, growrate)]
-hy = [(cs, npad, -growrate), (cs, 100)]
+hx = [(cs, npad, -growrate), (cs, 160), (cs, npad, growrate)]
+hy = [(cs, npad, -growrate), (cs, 80)]
 mesh = TensorMesh([hx, hy], "CN")
 expmap = maps.ExpMap(mesh)
 # actmap = maps.InjectActiveCells(mesh, ~airInd, np.log(1e-8))
@@ -415,7 +415,7 @@ def PLOT(
         A, B, zcLayer, dzLayer, xc, zc, r, sigLayer, sigTarget, sigHalf
     )
 
-    fig, ax = plt.subplots(2, 1, figsize=(9 * 1.5, 9 * 1.8), sharex=True)
+    fig, ax = plt.subplots(2, 1, figsize=(9, 8), sharex=True, gridspec_kw={'height_ratios':[1, 2]})
     fig.subplots_adjust(right=0.8, wspace=0.05, hspace=0.05)
 
     xSurface, phiTotalSurface, phiScaleTotal = get_Surface_Potentials(
@@ -886,7 +886,7 @@ def ResLayer_app():
         rholayer=FloatText(
             min=1e-8,
             max=1e8,
-            value=5000.0,
+            value=500.0,
             continuous_update=False,
             description="$\\rho_{2}$",
         ),
@@ -900,7 +900,7 @@ def ResLayer_app():
         rhoTarget=FloatText(
             min=1e-8,
             max=1e8,
-            value=500.0,
+            value=50.0,
             continuous_update=False,
             description="$\\rho_{3}$",
         ),
