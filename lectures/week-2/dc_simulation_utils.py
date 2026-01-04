@@ -37,7 +37,7 @@ def create_survey(
     )
 
     # Define survey
-    survey = dc.survey.Survey(source_list, survey_type=survey_type)
+    survey = dc.survey.Survey(source_list)
     return survey
 
 
