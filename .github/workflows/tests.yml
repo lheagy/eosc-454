@@ -19,7 +19,7 @@ jobs:
         os: ["ubuntu-latest"]
         python-version: ["3.11"]
         test_file: [
-          "tests/test_notebooks"
+          "tests/"
         ]
     env:
       PYTEST_DISABLE_PLUGIN_AUTOLOAD: "1"
